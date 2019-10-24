@@ -34,7 +34,7 @@ class Archive extends AbstractStage {
    }
 
    // Builds a string of the form <archiveLocation>\\export\\<branch>\\<build_number>
-   private void setArchiveLocation() 
+   private void setArchiveLocation() {
 	//  def organization = ''
     //  def organization = script.getComponentParts()['organization']
 
