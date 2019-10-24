@@ -54,7 +54,7 @@ class Archive extends AbstractStage {
 
    // Set an env var that points to the archive so dependents can find it
    private void setArchiveVar() {
-      def component = env.JOB_NAME
+      def component = script.env."JOB_NAME"
       def depDir = "${component}_DEP_DIR"
       script.env."$depDir" = archiveLocation
    }
