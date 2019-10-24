@@ -169,7 +169,7 @@ class Pipeline implements Serializable {
       script.node(nodeLabel) {
          script.stage("Validation") {
             script.echo("Validating build output.")
-            def component = script.getComponentParts()['repo']
+            def component = script.env."JOB_NAME"
             def exportDir = script.env."${component}_DEP_DIR"
             pipelineInformation.lvVersions.each { version ->
                if(!script.fileExists("$exportDir\\$version")) {
