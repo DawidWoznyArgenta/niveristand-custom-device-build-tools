@@ -48,13 +48,13 @@ class Archive extends AbstractStage {
       }*/
 
       archiveLocation = "${configuration.archive.get('archive_location')}\\" +
-         "export\\${script.env.BRANCH_NAME}\\" +
+         "export\\" +
          "Build ${script.currentBuild.number}"
    }
 
    // Set an env var that points to the archive so dependents can find it
    private void setArchiveVar() {
-      def component = script.getComponentParts()['repo']
+      def component = env.JOB_NAME
       def depDir = "${component}_DEP_DIR"
       script.env."$depDir" = archiveLocation
    }
