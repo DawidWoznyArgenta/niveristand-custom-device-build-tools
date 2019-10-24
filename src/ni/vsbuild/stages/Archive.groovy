@@ -35,7 +35,7 @@ class Archive extends AbstractStage {
 
    // Builds a string of the form <archiveLocation>\\export\\<branch>\\<build_number>
    private void setArchiveLocation() 
-	  def organization = ''
+	//  def organization = ''
     //  def organization = script.getComponentParts()['organization']
 
       // Organization may not exist for multibranch pipelines not using
@@ -48,7 +48,6 @@ class Archive extends AbstractStage {
       }*/
 
       archiveLocation = "${configuration.archive.get('archive_location')}\\" +
-         "$organization" +
          "export\\${script.env.BRANCH_NAME}\\" +
          "Build ${script.currentBuild.number}"
    }
