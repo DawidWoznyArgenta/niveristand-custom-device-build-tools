@@ -141,7 +141,7 @@ class Pipeline implements Serializable {
       script.stage("Checkout_$lvVersion") {
          script.deleteDir()
          script.echo 'Attempting to get source from repo.'
-         script.timeout(time: 5, unit: 'MINUTES'){
+         script.timeout(time: 30, unit: 'MINUTES'){
             manifest['scm'] = script.checkout(script.scm)
          }
       }
