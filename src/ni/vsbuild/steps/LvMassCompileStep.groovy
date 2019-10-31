@@ -4,14 +4,14 @@ import ni.vsbuild.BuildConfiguration
 
 class LvMassCompileStep extends LvStep {
 
-   def vi
+   def dir_to_mc
 
    LvMassCompileStep(script, mapStep, lvVersion) {
       super(script, mapStep, lvVersion)
-      this.vi = mapStep.get('vi')
+      this.dir_to_mc = mapStep.get('dir_to_mc')
    }
 
    void executeStep(BuildConfiguration configuration) {
-      script.lvMassCompile(vi, lvVersion)
+      script.lvMassCompile(dir_to_mc, lvVersion)
    }
 }
