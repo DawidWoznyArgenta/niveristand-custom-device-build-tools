@@ -35,6 +35,10 @@ class StepFactory implements Serializable {
 	  if(type == 'lvMassCompile') {
          return new LvMassCompileStep(script, mapStep, lvVersion)
       }
+	  
+	  if(type == 'lvRunVIAnalyzer') {
+         return new LvRunVIAnalyzerStep(script, mapStep, lvVersion)
+      }
 
       if(type == 'lvSetConditionalSymbol') {
          return new LvSetConditionalSymbolStep(script, mapStep, lvVersion)
