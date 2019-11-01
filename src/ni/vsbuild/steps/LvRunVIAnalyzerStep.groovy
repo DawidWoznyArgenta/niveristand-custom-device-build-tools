@@ -4,14 +4,14 @@ import ni.vsbuild.BuildConfiguration
 
 class LvRunVIAnalyzerStep extends LvStep {
 
-   def vi
+   def cfg_path
 
    LvRunVIAnalyzerStep(script, mapStep, lvVersion) {
       super(script, mapStep, lvVersion)
-      this.vi = mapStep.get('vi')
+      this.cfg_path = mapStep.get('cfg_path')
    }
 
    void executeStep(BuildConfiguration configuration) {
-      script.lvRunVIAnalyzer(vi, lvVersion)
+      script.lvRunVIAnalyzer(cfg_path, lvVersion)
    }
 }
