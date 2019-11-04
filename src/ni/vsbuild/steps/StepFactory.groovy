@@ -47,6 +47,10 @@ class StepFactory implements Serializable {
       if(type == 'lvVITester') {
          return new LvVITesterStep(script, mapStep, lvVersion)
       }
+	  
+	  if(type == 'runCmd') {
+         return new RunCmdStep(script, mapStep, lvVersion)
+      }
 
       script.failBuild("Type \'$type\' is invalid for step \'${mapStep.get('name')}\'.")
    }
